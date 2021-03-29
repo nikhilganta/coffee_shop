@@ -75,7 +75,7 @@ def create_drink(jwt):
         abort(422)
     else:
         try:
-            drink = Drink(title = new_title, recipe = new_recipe)
+            drink = Drink(title = new_title, recipe = json.dumps(new_recipe))
             drink.insert()
             return jsonify({
                 "success": True,
@@ -107,7 +107,7 @@ def update_drinks(jwt, id):
             if body.get("title", None):
                 drink.title = body.get("title")
             if body.get("recipe", None):
-                drink.recipe = body.get("recipe")
+                drink.recipe = json.dumps(body.get("recipe"))
             drink.update()
             return jsonify({
                 "success": True,
