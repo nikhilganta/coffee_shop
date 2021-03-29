@@ -14,4 +14,5 @@ ehthumbs.db
 Thumbs.db
 backend/src/database/database.db
 frontend/node_modules/
-RolesAndJWT.txt
+package-lock.json
+frontend/package.json
